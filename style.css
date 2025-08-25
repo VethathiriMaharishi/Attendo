@@ -42,11 +42,23 @@ h1, h2 {
   padding-bottom: 8px;
 }
 
+/* ✅ Responsive table */
 .attendance-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 25px;
   font-size: 1.1em;
+  overflow-x: auto;
+  display: block;
+}
+
+/* ✅ Sticky header */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #007bff;
+  color: white;
+  z-index: 2;
 }
 
 th, td {
@@ -89,6 +101,20 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* ✅ Mobile-friendly controls */
+@media (max-width: 768px) {
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  button {
+    flex: 1 1 40%;
+  }
+}
+
 /* Present / Absent styling */
 .present {
   background-color: #d4edda !important;
@@ -120,6 +146,7 @@ button:hover {
   border-radius: 10px;
   margin-top: 10px;
 }
+
 .powered-by {
   text-align: right;
   margin-top: 30px;
@@ -146,7 +173,10 @@ button:hover {
   }
 }
 
+#school-title { 
+  font-size: 1.5rem; 
+}
 
-  #school-title { font-size: 1.5rem; }
-  #attendance-title { font-size: 1.1rem; }
+#attendance-title { 
+  font-size: 1.1rem; 
 }
